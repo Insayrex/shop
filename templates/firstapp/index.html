@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{% static "css/styles.css" %}" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>Hello Django</title>
+</head>
+<body>
+        <div class="general-container">
+            <div class="container top-container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h1 class="title">{{ name }}</h1>
+                        <h1 class="title">{{ curren_day }}</h1>
+                        <div >
+                            <form action="" method="post" class="form-inline text-center"> {% csrf_token %}
+                                <div class="form-group">
+                                    <label>Ваш Email:   </label>
+                                     <input type="text" name="{{ form.email.name }}" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Ваш нікнейм: </label>
+                                    <input type="text" name="{{ form.name.name }}" class="form-control">
+                                </div>
+                                <div>
+                                 <button type="submit" class="btn btn-primary">Відправити</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
